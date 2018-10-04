@@ -212,7 +212,8 @@ An inner\_join(x, y) is defined as :
 Return all rows from x where there are matching values in y, and all columns from x and y. If there are multiple matches between x and y, all combination of the matches are returned.
 
 ``` r
-kable(inner_join(pharmData, drugData))
+inner_join(pharmData, drugData) %>% 
+  kable()
 ```
 
     ## Joining, by = "Company"
@@ -255,7 +256,8 @@ A right\_join(x,y) is defined as return all rows from y, and all columns from x 
 These joins can be interpretted as "left join = keep all the rows from the left table, adding NA as necessary". It's important to note that the results of left\_join(x,y) will not match right\_join(x,y), but that left\_join(x,y) will match right\_join(y, x).
 
 ``` r
-kable(left_join(pharmData, drugData))
+left_join(pharmData, drugData) %>% 
+  kable()
 ```
 
     ## Joining, by = "Company"
@@ -288,7 +290,8 @@ This result is characterized as:
 The corresponding right\_join is:
 
 ``` r
-kable(right_join(pharmData, drugData))
+right_join(pharmData, drugData) %>% 
+  kable()
 ```
 
     ## Joining, by = "Company"
@@ -337,7 +340,8 @@ A full\_join(x,y) is characterized as:
 return all rows and all columns from both x and y. Where there are not matching values, returns NA for the one missing.
 
 ``` r
-kable(full_join(pharmData, drugData))
+full_join(pharmData, drugData) %>% 
+  kable()
 ```
 
     ## Joining, by = "Company"
@@ -383,7 +387,8 @@ A semi\_join(x,y) is defined as:
 return all rows from x where there are matching values in y, keeping just columns from x. A semi join differs from an inner join because an inner join will return one row of x for each matching row of y, where a semi join will never duplicate rows of x.
 
 ``` r
-kable(semi_join(pharmData, drugData))
+semi_join(pharmData, drugData) %>% 
+  kable()
 ```
 
     ## Joining, by = "Company"
@@ -412,7 +417,8 @@ A anti\_join(x,y) is defined as:
 return all rows from x where there are not matching values in y, keeping just columns from x.
 
 ``` r
-kable(anti_join(pharmData, drugData))
+anti_join(pharmData, drugData) %>% 
+  kable()
 ```
 
     ## Joining, by = "Company"

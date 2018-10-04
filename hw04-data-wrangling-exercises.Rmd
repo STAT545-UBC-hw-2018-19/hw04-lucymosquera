@@ -153,7 +153,8 @@ An inner_join(x, y) is defined as :
 Return all rows from x where there are matching values in y, and all columns from x and y. If there are multiple matches between x and y, all combination of the matches are returned.
 
 ```{r innerJoin}
-kable(inner_join(pharmData, drugData))
+inner_join(pharmData, drugData) %>% 
+  kable()
 ```
 
 This result is characterized by:
@@ -174,7 +175,8 @@ return all rows from y, and all columns from x and y. Rows in y with no match in
 These joins can be interpretted as "left join = keep all the rows from the left table, adding NA as necessary". It's important to note that the results of left_join(x,y) will not match right_join(x,y), but that left_join(x,y) will match right_join(y, x).
 
 ```{r leftJoin}
-kable(left_join(pharmData, drugData))
+left_join(pharmData, drugData) %>% 
+  kable()
 ```
 
 This result is characterized as:
@@ -184,7 +186,8 @@ This result is characterized as:
 The corresponding right_join is:
 
 ```{r rightJoin}
-kable(right_join(pharmData, drugData))
+right_join(pharmData, drugData) %>% 
+  kable()
 ```
 
 This result is characterized by:
@@ -202,7 +205,8 @@ A full_join(x,y) is characterized as:
 return all rows and all columns from both x and y. Where there are not matching values, returns NA for the one missing.
 
 ```{r fullJoin}
-kable(full_join(pharmData, drugData))
+full_join(pharmData, drugData) %>% 
+  kable()
 ```
 
 This result can be characterized by:
@@ -216,7 +220,8 @@ A semi_join(x,y) is defined as:
 return all rows from x where there are matching values in y, keeping just columns from x. A semi join differs from an inner join because an inner join will return one row of x for each matching row of y, where a semi join will never duplicate rows of x.
 
 ```{r semiJoin}
-kable(semi_join(pharmData, drugData))
+semi_join(pharmData, drugData) %>% 
+  kable()
 ```
 
 This result can be characterized as:
@@ -230,7 +235,8 @@ A anti_join(x,y) is defined as:
 return all rows from x where there are not matching values in y, keeping just columns from x.
 
 ```{r antiJoin}
-kable(anti_join(pharmData, drugData))
+anti_join(pharmData, drugData) %>% 
+  kable()
 ```
 
 This result can be characterized as:
