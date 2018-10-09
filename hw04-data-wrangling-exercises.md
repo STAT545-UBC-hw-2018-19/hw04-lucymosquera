@@ -16,7 +16,7 @@ October 3, 2018
 Introduction
 ============
 
-The goal of this assignment is gain experience applying a variety of data wrangling tools to realistic problems. We aim to come up with concise, repeatable, and understandable ways to manipulate data to serve our purposes.
+The goal of this assignment is to gain experience applying a variety of data wrangling tools to realistic problems. We aim to come up with concise, repeatable, and understandable ways to manipulate data to serve our purposes.
 
 ``` r
 library(tidyverse)
@@ -67,6 +67,8 @@ gapminder %>%
 ```
 
 ![](hw04-data-wrangling-exercises_files/figure-markdown_github/plotReshapedLifeExpData-1.png)
+
+From this we can see that life expectancy in Canada is highly correlated with life expectancy in the United States.
 
 Data Joining
 ============
@@ -253,7 +255,7 @@ return all rows from x, and all columns from x and y. Rows in x with no match in
 
 A right\_join(x,y) is defined as return all rows from y, and all columns from x and y. Rows in y with no match in x will have NA values in the new columns. If there are multiple matches between x and y, all combinations of the matches are returned.
 
-These joins can be interpretted as "left join = keep all the rows from the left table, adding NA as necessary". It's important to note that the results of left\_join(x,y) will not match right\_join(x,y), but that left\_join(x,y) will match right\_join(y, x).
+These joins can be interpretted as "left join = keep all the rows from the left table, adding NA to the columns from y as necessary". It's important to note that the results of left\_join(x,y) will not match right\_join(x,y), but that left\_join(x,y) will match right\_join(y, x).
 
 ``` r
 left_join(pharmData, drugData) %>% 
